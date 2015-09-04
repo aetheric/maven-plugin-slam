@@ -1,17 +1,16 @@
 package nz.co.aetheric.maven.plugin.slam
 
-import org.apache.maven.plugin.AbstractMojo
-import org.apache.maven.plugins.annotations.Mojo
+import sun.reflect.generics.reflectiveObjects.NotImplementedException
 
 /**
- * Goes through all git branches and removes everything that's safely integrated.
+ * Tests for [[nz.co.aetheric.maven.plugin.slam.CleanMojo]].
  */
-@Mojo(name = "clean")
-class CleanMojoTest extends AbstractMojo {
+class CleanMojoTest extends SlamMojoTestBase[CleanMojo] {
 
-	@Override
-	def execute() = {
-		//
+	override val target = "clean"
+
+	"The Mojo" should "fail immediately when executed" in {
+		a [NotImplementedException] should be thrownBy mojo.execute()
 	}
 
 }

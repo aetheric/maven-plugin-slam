@@ -1,20 +1,17 @@
 package nz.co.aetheric.maven.plugin.slam
 
-import org.apache.maven.plugin.AbstractMojo
-import org.apache.maven.plugins.annotations.{Mojo, Parameter}
+import org.scalatest._
+import sun.reflect.generics.reflectiveObjects.NotImplementedException
 
-@Mojo(name = "fork")
-class ForkMojoTest extends AbstractMojo {
+/**
+ * Tests for [[nz.co.aetheric.maven.plugin.slam.ForkMojo]].
+ */
+class ForkMojoTest extends SlamMojoTestBase[ForkMojo] {
 
-	 @Parameter(required = true)
-	 var sourceTag: String = _
+	override val target = "fork"
 
-	 @Parameter(required = true)
-	 var targetVersion: String = _
+	"The Mojo" should "fail immediately when executed" in {
+		a [NotImplementedException] should be thrownBy mojo.execute()
+	}
 
-	 @Override
-	 def execute() = {
-		 //
-	 }
-
- }
+}

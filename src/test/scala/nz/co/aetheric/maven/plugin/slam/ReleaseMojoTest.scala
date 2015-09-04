@@ -1,21 +1,16 @@
 package nz.co.aetheric.maven.plugin.slam
 
-import org.apache.maven.plugin.AbstractMojo
-import org.apache.maven.plugins.annotations.{Mojo, Parameter}
+import sun.reflect.generics.reflectiveObjects.NotImplementedException
 
 /**
- * Will create a release tag, build it, and upload the results to a repository, then delete the branch and merge the
- * tag back into the originating branch.
+ * Tests for [[nz.co.aetheric.maven.plugin.slam.ReleaseMojo]].
  */
-@Mojo(name = "release")
-class ReleaseMojoTest extends AbstractMojo {
+class ReleaseMojoTest extends SlamMojoTestBase[ReleaseMojo] {
 
-	@Parameter(required = false, defaultValue = "")
-	var tagPrefix: String = _
+	override val target = "release"
 
-	@Override
-	def execute() = {
-		//
+	"The Mojo" should "fail immediately when executed" in {
+		a [NotImplementedException] should be thrownBy mojo.execute()
 	}
 
 }

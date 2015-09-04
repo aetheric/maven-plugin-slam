@@ -2,6 +2,7 @@ package nz.co.aetheric.maven.plugin.slam
 
 import org.apache.maven.plugin.AbstractMojo
 import org.apache.maven.plugins.annotations.{Mojo, Parameter}
+import sun.reflect.generics.reflectiveObjects.NotImplementedException
 
 @Mojo(name = "fork")
 class ForkMojo extends AbstractMojo {
@@ -14,7 +15,7 @@ class ForkMojo extends AbstractMojo {
 
 	@Override
 	def execute() = {
-		//
+		throw new NotImplementedException()
 	}
 
 }

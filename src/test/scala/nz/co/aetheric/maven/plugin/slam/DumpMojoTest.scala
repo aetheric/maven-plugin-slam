@@ -1,28 +1,17 @@
 package nz.co.aetheric.maven.plugin.slam
 
-import org.apache.maven.plugin.AbstractMojo
-import org.apache.maven.plugins.annotations.{Mojo, Parameter}
+import org.scalatest._
+import sun.reflect.generics.reflectiveObjects.NotImplementedException
 
 /**
- * Adds and commits all workspace changes in one messy go, interactively prompting for some explanation as to what was
- * done.
+ * Tests for [[nz.co.aetheric.maven.plugin.slam.DumpMojo]].
  */
-@Mojo(name = "dump")
-class DumpMojoTest extends AbstractMojo {
+class DumpMojoTest extends SlamMojoTestBase[DumpMojo] {
 
-	/**
-	 * The issue tracker key.
-	 */
-	@Parameter(required = true)
-	var issueKey: String = _
+	override val target = "dump"
 
-	/** The issue tracker url; used for updating issues with progress. */
-	@Parameter(required = false, defaultValue = null)
-	var trackerUrl: String = _
-
-	@Override
-	def execute() = {
-		//
+	"The Mojo" should "fail immediately when executed" in {
+		a [NotImplementedException] should be thrownBy mojo.execute()
 	}
 
 }

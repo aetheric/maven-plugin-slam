@@ -1,17 +1,16 @@
 package nz.co.aetheric.maven.plugin.slam
 
-import org.apache.maven.plugin.AbstractMojo
-import org.apache.maven.plugins.annotations.{Mojo, Parameter}
+import sun.reflect.generics.reflectiveObjects.NotImplementedException
 
-@Mojo(name = "patch")
-class PatchMojoTest extends AbstractMojo {
+/**
+ * Tests for [[nz.co.aetheric.maven.plugin.slam.PatchMojo]].
+ */
+class PatchMojoTest extends SlamMojoTestBase[PatchMojo] {
 
-	 @Parameter(required = true)
-	 var sourceTag: String = _
+	override val target = "patch"
 
-	 @Override
-	 def execute() = {
-		 //
-	 }
+	"The Mojo" should "fail immediately when executed" in {
+		a [NotImplementedException] should be thrownBy mojo.execute()
+	}
 
- }
+}

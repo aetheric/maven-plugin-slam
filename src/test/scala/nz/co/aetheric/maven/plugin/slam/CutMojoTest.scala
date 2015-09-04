@@ -1,23 +1,17 @@
 package nz.co.aetheric.maven.plugin.slam
 
-import org.apache.maven.plugin.AbstractMojo
-import org.apache.maven.plugins.annotations.{Mojo, Parameter}
+import org.scalatest._
+import sun.reflect.generics.reflectiveObjects.NotImplementedException
 
-@Mojo(name = "cut")
-class CutMojoTest extends AbstractMojo {
+/**
+ * Tests for [[nz.co.aetheric.maven.plugin.slam.CutMojo]].
+ */
+class CutMojoTest extends SlamMojoTestBase[CutMojo] {
 
-	 @Parameter(required = false)
-	 var nextRelease: String = _
+	override val target = "cut"
 
-	 @Parameter(required = false, defaultValue = "false")
-	 var majorRelease: Boolean = _
+	"The Mojo" should "fail immediately when executed" in {
+		a [NotImplementedException] should be thrownBy mojo.execute()
+	}
 
-	 @Parameter(required = false, defaultValue = "")
-	 var branchPrefix: String = _
-
-	 @Override
-	 def execute() = {
-		 //
-	 }
-
- }
+}

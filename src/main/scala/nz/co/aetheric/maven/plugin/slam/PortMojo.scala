@@ -2,6 +2,7 @@ package nz.co.aetheric.maven.plugin.slam
 
 import org.apache.maven.plugin.AbstractMojo
 import org.apache.maven.plugins.annotations.{Mojo, Parameter}
+import sun.reflect.generics.reflectiveObjects.NotImplementedException
 
 /**
  * Will take a series of commits and
@@ -20,7 +21,7 @@ class PortMojo extends AbstractMojo {
 
 	@Override
 	def execute() = {
-		//
+		throw new NotImplementedException()
 	}
 
 }

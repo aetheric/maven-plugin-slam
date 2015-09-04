@@ -2,6 +2,7 @@ package nz.co.aetheric.maven.plugin.slam
 
 import org.apache.maven.plugin.AbstractMojo
 import org.apache.maven.plugins.annotations.{Mojo, Parameter}
+import sun.reflect.generics.reflectiveObjects.NotImplementedException
 
 /**
  * Will create a new feature branch based off an issue tracker.
@@ -21,12 +22,12 @@ class StartMojo extends AbstractMojo {
 	@Parameter(required = true)
 	var issueKey: String = _
 
-	@Parameter(required = false, defaultValue = null)
+	@Parameter(required = false)
 	var trackerUrl: String = _
 
 	@Override
 	def execute() = {
-		//
+		throw new NotImplementedException()
 	}
 
 }

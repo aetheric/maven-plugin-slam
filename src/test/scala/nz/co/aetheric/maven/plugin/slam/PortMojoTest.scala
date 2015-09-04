@@ -1,26 +1,16 @@
 package nz.co.aetheric.maven.plugin.slam
 
-import org.apache.maven.plugin.AbstractMojo
-import org.apache.maven.plugins.annotations.{Mojo, Parameter}
+import sun.reflect.generics.reflectiveObjects.NotImplementedException
 
 /**
- * Will take a series of commits and
+ * Tests for [[nz.co.aetheric.maven.plugin.slam.PortMojo]].
  */
-@Mojo(name = "port")
-class PortMojoTest extends AbstractMojo {
+class PortMojoTest extends SlamMojoTestBase[PortMojo] {
 
-	@Parameter(required = true)
-	var issueKey: String = _
+	override val target = "port"
 
-	@Parameter(required = false)
-	var sourceRange: List[String] = _
-
-	@Parameter(required = false)
-	var targetBranch: String = _
-
-	@Override
-	def execute() = {
-		//
+	"The Mojo" should "fail immediately when executed" in {
+		a [NotImplementedException] should be thrownBy mojo.execute()
 	}
 
 }

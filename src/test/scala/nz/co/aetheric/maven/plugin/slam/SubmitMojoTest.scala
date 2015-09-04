@@ -1,17 +1,17 @@
 package nz.co.aetheric.maven.plugin.slam
 
-import org.apache.maven.plugin.AbstractMojo
-import org.apache.maven.plugins.annotations.Mojo
+import org.scalatest._
+import sun.reflect.generics.reflectiveObjects.NotImplementedException
 
 /**
- * Will submit the current feature branch to merge request tool for review.
+ * Tests for [[nz.co.aetheric.maven.plugin.slam.SubmitMojo]].
  */
-@Mojo(name = "submit")
-class SubmitMojoTest extends AbstractMojo {
+class SubmitMojoTest extends SlamMojoTestBase[SubmitMojo] {
 
-	@Override
-	def execute() = {
-		//
+	override val target = "submit"
+
+	"The Mojo" should "fail immediately when executed" in {
+		a [NotImplementedException] should be thrownBy mojo.execute()
 	}
 
 }
