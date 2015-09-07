@@ -6,6 +6,12 @@
          ">
 	<modelVersion>4.0.0</modelVersion>
 
+	<parent>
+		<groupId>nz.co.aetheric.parent</groupId>
+		<artifactId>maven-parent-global</artifactId>
+		<version>1.1.0</version>
+	</parent>
+
 	<groupId>nz.co.aetheric</groupId>
 	<artifactId>maven-plugin-slam</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
@@ -26,8 +32,6 @@
 	</scm>
 
 	<properties>
-		<!-- Make this part of core tile. -->
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<version.scala>2.11.6</version.scala>
 		<version.scoverage>1.1.1</version.scoverage>
 	</properties>

@@ -4,6 +4,7 @@ jdk: oraclejdk7
 branches:
   except:
     - travis
+    - gh-pages
 
 after_success:
   - mvn site
