@@ -5,8 +5,7 @@ import java.nio.file.Paths
 import org.apache.maven.plugin.testing.MojoRule
 import org.apache.maven.project.MavenProject
 import org.junit.Rule
-import org.junit.runners.JUnit4
-import org.scalatest.{BeforeAndAfter, WrapWith, Matchers, FlatSpec}
+import org.scalatest.{BeforeAndAfter, Matchers, FlatSpec}
 
 /**
  * Base class for all slam [[org.apache.maven.plugin.AbstractMojo]] tests.
@@ -34,11 +33,11 @@ abstract class SlamMojoTestBase[MojoType] extends FlatSpec
 
 		// Load the maven project.
 		project = rule.readMavenProject(pomFile)
-		project should not be null
+		project should not be null.asInstanceOf[MavenProject]
 
 		// Load the target Mojo
 		mojo = rule.lookupConfiguredMojo(project, target).asInstanceOf[MojoType]
-		mojo should not be null
+		mojo should not be null.asInstanceOf[MojoType]
 
 	}
 
