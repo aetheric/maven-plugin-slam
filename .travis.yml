@@ -1,6 +1,9 @@
 language: java
 jdk: oraclejdk7
 
+after_success:
+  - mvn site
+
 deploy:
   provider: releases
   api_key:

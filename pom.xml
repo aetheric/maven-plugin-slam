@@ -94,6 +94,8 @@
 	</dependencies>
 
 	<build>
+		<sourceDirectory>src/main/scala</sourceDirectory>
+
 		<plugins>
 
 			<!-- Scala lang should be a tile. -->
@@ -226,6 +228,11 @@
 				<groupId>org.eluder.coveralls</groupId>
 				<artifactId>coveralls-maven-plugin</artifactId>
 				<version>4.0.0</version>
+				<configuration>
+					<sourceDirectories>
+						<sourceDirectory>src/main/scala</sourceDirectory>
+					</sourceDirectories>
+				</configuration>
 				<executions>
 
 					<execution>

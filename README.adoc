@@ -1,0 +1,6 @@
+maven-plugin-slam
+=================
+
+image:https://travis-ci.org/aetheric/maven-plugin-slam.svg?branch=master["Build Status", link="https://travis-ci.org/aetheric/maven-plugin-slam"]
+image:https://coveralls.io/repos/aetheric/maven-plugin-slam/badge.svg?branch=master&service=github["Coverage Status", link="https://coveralls.io/github/aetheric/maven-plugin-slam?branch=master"]
+
