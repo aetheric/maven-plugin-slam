@@ -202,6 +202,26 @@
 				</executions>
 			</plugin>
 
+			<plugin>
+				<groupId>com.github.github</groupId>
+				<artifactId>site-maven-plugin</artifactId>
+				<version>0.12</version>
+				<configuration>
+					<message>Updated documentation for ${project.version}.</message>
+					<server>github</server>
+				</configuration>
+				<executions>
+
+					<execution>
+						<phase>site</phase>
+						<goals>
+							<goal>site</goal>
+						</goals>
+					</execution>
+
+				</executions>
+			</plugin>
+
 		</plugins>
 	</build>
 
