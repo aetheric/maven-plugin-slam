@@ -1,0 +1,15 @@
+language: java
+jdk: oraclejdk7
+
+deploy:
+  provider: releases
+  api-key:
+  file:
+    - "target/maven-plugin-slam-*.jar"
+    - "target/maven-plugin-slam-*.pom"
+  skip_cleanup: true
+  on:
+    tags: true
+
+after_deploy:
+  - mvn deploy
