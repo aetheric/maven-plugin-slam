@@ -3,13 +3,15 @@ jdk: oraclejdk7
 
 deploy:
   provider: releases
-  api-key:
+  api_key:
+    secure: 0AtccOM1HQCk9BT94JO7HH08SJLVBtx5RysR+qILacSrg7ylKuRM//9sIC8GDdt6tCzkfYV0MV25AiIytLe3FHCLBjJQ78kStdh0slZOqfgr5AbjKhPo/H3Zu0BAGPcStQAgftQZ4siWE/OxOXHm1ScoKBQ46d8wItlimtDqIYQ/Su0dnETnicyUbEA6fX30eYguejvOS3J40IGI52HTMam+tst9CA5WCZbEw5JV879YA89R7uUetGcKefCY0H4IYcRKopeJeOuSuAPZz4YCgNum2hsbTfAhSb8pkaEIdMucUf1T7sxkyyb8qUMZ/ZYG/G7Jfdl4r0C0g3kSYiUXmByDtWU4WwNciWb/cWzjG7XrqHh4oLrGuL04vKMbgGwTgFicOuRhHX3Hi2tvuya++ZlAttVnsohwjfCk4dsj0pvH4obDAck1wWX9ioJ5ltuJMMioz33lt1r/0yiaIKcORpc/6S3fjg6Kg05lokz0eBHxUbICJeWcycWVuBzwnlMuQTW3Pg6iD3ukBP4AGsC5fex8y5438vZXuLcbKXENWcxCw2odLBHjRk2QflodfqLON5y6TiuJQZ7IlJTfCwmVyDzZpzNi49jix0FmO7nWzjI0ulmCIOXBDYKL1RFdwzy5KCjb85n6fOynDTbMXKtWelHFOVkBI0MflEXyIEut3cA=
   file:
-    - "target/maven-plugin-slam-*.jar"
-    - "target/maven-plugin-slam-*.pom"
+    - "maven-plugin-slam-*.jar"
+    - "maven-plugin-slam-*.pom"
   skip_cleanup: true
   on:
     tags: true
 
 after_deploy:
   - mvn deploy
+
