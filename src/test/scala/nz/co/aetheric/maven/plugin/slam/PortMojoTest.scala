@@ -1,5 +1,6 @@
 package nz.co.aetheric.maven.plugin.slam
 
+import org.junit.Test
 import sun.reflect.generics.reflectiveObjects.NotImplementedException
 
 /**
@@ -9,7 +10,8 @@ class PortMojoTest extends SlamMojoTestBase[PortMojo] {
 
 	override val target = "port"
 
-	"The Mojo" should "fail immediately when executed" in {
+	@Test
+	def theMojoShouldFailImmediatelyWhenExecuted() {
 		a [NotImplementedException] should be thrownBy mojo.execute()
 	}
 

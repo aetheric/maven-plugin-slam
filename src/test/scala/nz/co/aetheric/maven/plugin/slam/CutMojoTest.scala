@@ -1,5 +1,6 @@
 package nz.co.aetheric.maven.plugin.slam
 
+import org.junit.Test
 import org.scalatest._
 import sun.reflect.generics.reflectiveObjects.NotImplementedException
 
@@ -10,7 +11,8 @@ class CutMojoTest extends SlamMojoTestBase[CutMojo] {
 
 	override val target = "cut"
 
-	"The Mojo" should "fail immediately when executed" in {
+	@Test
+	def theMojoShouldFailImmediatelyWhenExecuted() {
 		a [NotImplementedException] should be thrownBy mojo.execute()
 	}
 
